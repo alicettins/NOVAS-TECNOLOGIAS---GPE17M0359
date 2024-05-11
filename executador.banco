@@ -1,0 +1,20 @@
+from atividade5.banco import ContaBancaria
+from atividade5.banco import Historico
+from atividade5.banco import Cliente
+from atividade5.banco import ContaPoupanca
+from atividade5.banco import ContaCorrente
+
+pedro = Cliente("Pedro", "Fernandes", "11111-1")
+ana = Cliente("Ana", "Oliveira", "22222-222")
+conta_pedro = ContaBancaria("123-4", "Corrente", 1000.00, 500.00)
+conta_ana = ContaBancaria("123-5", "Corrente", 7000.00, 4000.00)
+
+conta_pedro.obter_extrato()
+conta_pedro.consultar_saldo()
+print(conta_pedro.consultar_saldo())
+conta_pedro.saca(500.00)
+conta_pedro.deposita(5.50)
+conta_pedro.transfere_para(conta_ana, 2500.00)
+conta_pedro.fechar_conta()
+
+conta_pedro._historico.imprime()
